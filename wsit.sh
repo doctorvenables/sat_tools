@@ -2,7 +2,8 @@
 norad_id="$1"
 min_norad=10000
 max_norad=99999
-
+#echo ${HOME}
+#ls ${HOME}
 if [[ $norad_id =~ ^-?[0-9]+$ ]]; then
   echo ""
 else
@@ -10,19 +11,19 @@ else
   exit 1
 fi
 
-if [ $norad_id -lt $min_norad ]; then 
+if [ $norad_id -lt $min_norad ]; then
   echo "NORAD too low - exiting"
   exit 2
 fi
 
-if [ $norad_id -gt $max_norad ]; then 
+if [ $norad_id -gt $max_norad ]; then
   echo "NORAD too high - exiting"
   exit 3
 fi
-
+file_dest=${HOME}/satnogs.txt
 echo "NORAD ID $norad_id is"
-test -f /home/doctorvenables/satnogs.txt ||  wget https://celestrak.com/NORAD/elements/satnogs.txt 
+test -f ${HOME}/satnogs.txt ||  wget https://celestrak.com/NORAD/elements/satnogs.txt -P ${HOME}
 
-grep -B 1 $norad_id /home/doctorvenables/satnogs.txt | head -n1 - 
+grep -B 1 $norad_id ${HOME}/satnogs.txt | head -n1 -
 
 
