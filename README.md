@@ -1,11 +1,13 @@
 # sat_tools
 A repo of little scripts that help
 
-<b>Install</b>
-sudo install ./wsit /usr/local/whatever
+<H2>Install</h2>
+<p>sudo install ./wsit /directory/in/path
 
-<b>wsit</b>
-wsit
-Once installed to the path, 
+<H2>Usage</H2>
+<h3>wsit</h3>
+<p>Once installed to the path: 
 
-Usage wsit  XXXXX where XXXXX is a valid norad id in the satnogs database
+<p><b>Usage</b>
+<p> wsit:  XXXXX where XXXXX is a valid norad id in the satnogs database
+<p>Will return the human-readable name of the satellite or report that it is not in the 'active' NORAD database
