@@ -1,5 +1,11 @@
 # sat_tools
 A repo of little scripts that help
 
-wsit.sh
-Usage ./wsit.sh XXXXX where XXXXX is a valid norad id in the satnogs database
+<b>Install</b>
+sudo install ./wsit /usr/local/whatever
+
+<b>wsit</b>
+wsit
+Once installed to the path, 
+
+Usage wsit  XXXXX where XXXXX is a valid norad id in the satnogs database
