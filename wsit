@@ -1,6 +1,6 @@
 #!/bin/bash
 norad_id="$1"
-min_norad=10000
+min_norad=899
 max_norad=99999
 #echo ${HOME}
 #ls ${HOME}
@@ -22,9 +22,15 @@ if [ $norad_id -gt $max_norad ]; then
 fi
 file_dest=${HOME}/satnogs.txt
 echo "NORAD ID $norad_id is"
-test -f ${HOME}/satnogs.txt ||  wget https://celestrak.com/NORAD/elements/active.txt -P ${HOME}
+test -f ${HOME}/active.txt ||  wget https://celestrak.com/NORAD/elements/active.txt -P ${HOME}
 
-grep -B 1 $norad_id ${HOME}/satnogs.txt | head -n1 -
+sat_name=$(grep -B 1 $norad_id ${HOME}/active.txt | head -n1 -)
 
+if [ -n "$sat_name" ]; then
+  echo "$sat_name"
+else
+  echo "not an active satellite"
+  exit 4
+fi
 
 
