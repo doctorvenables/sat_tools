@@ -1,0 +1,8 @@
+README.md
+setup.py
+supported_sats.py
+supported_sats.egg-info/PKG-INFO
+supported_sats.egg-info/SOURCES.txt
+supported_sats.egg-info/dependency_links.txt
+supported_sats.egg-info/requires.txt
+supported_sats.egg-info/top_level.txt
