@@ -1,10 +1,6 @@
 import os
 import yaml
-#Use this Path if gr-satellites is installed to the default location with 'sudo make install'
-satyamlPath = '/usr/local/lib/python3/dist-packages/satellites/satyaml/'
-
-#Use this path if gr-satellites is not installed with 'sudo make install' but has been cloned
-#You may need to edit this path...
+satyamlPath = '/usr/local/bin/python3/dist-packages/satellites/satyaml'
 #satyamlPath = '/home/doctorvenables/gr-satellites/python/satyaml/'
 requiredData = ["norad","name","data"]
 outputFile = os.path.expanduser("~")+'/supported_satellites.txt'
