@@ -20,11 +20,11 @@ if [ $norad_id -gt $max_norad ]; then
   echo "NORAD too high - exiting"
   exit 3
 fi
-file_dest=${HOME}/satnogs.txt
+file_dest=${HOME}/mykepler.txt
 echo "NORAD ID $norad_id is"
-test -f ${HOME}/active.txt ||  wget https://celestrak.com/NORAD/elements/active.txt -P ${HOME}
+test -f ${HOME}/mykepler.txt ||  wget http://tle.pe0sat.nl/kepler/mykepler.txt -P ${HOME}
 
-sat_name=$(grep -B 1 $norad_id ${HOME}/active.txt | head -n1 -)
+sat_name=$(grep -B 1 $norad_id ${HOME}/mykepler.txt | head -n1 -)
 
 if [ -n "$sat_name" ]; then
   echo "$sat_name"
